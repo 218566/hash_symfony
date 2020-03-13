@@ -37,14 +37,13 @@ class HashController extends AbstractController
 
         $form = $this->createFormBuilder($hash)
             ->add('value', TextType::class)
-            ->add('save', SubmitType::class, ['label' => 'Create user'])
+            ->add('save', SubmitType::class, ['label' => 'Przelicz'])
             ->getForm();
 
-        return $this->render('/hash-form.html.twig', [
+        return $this->render('/form/hash-form.html.twig', [
             'hash_form' => $form->createView(),
         ]);
 
-       echo "dupa";
 
     }
 }
