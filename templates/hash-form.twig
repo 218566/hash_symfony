@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+<html>
+
+        <title>{% block title %}Hashing!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+
+
+        {% block %}
+            <p>{{ form(hash_form) }}</p>
+        {% endblock %}
+
+</html>
