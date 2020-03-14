@@ -1,10 +1,10 @@
-{% extends '../base.html.twig' %}
+{% extends 'base.html.twig' %}
 
 
 {% block stylesheets %}{% endblock %}
 
 
-{% block %}
-    <p>{{ form(hash_form) }}</p>
+{% block content %}
+    {{ form(hash_form) }}
 {% endblock %}
 

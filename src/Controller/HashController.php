@@ -8,7 +8,6 @@ use App\Entity\Hash;
 use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
@@ -28,10 +27,9 @@ class HashController extends AbstractController
     }
 
     /**
-     * @Route("/hash", name="hash")
+     * @Route("/hash", name="hash_esh")
      */
-
-    public function HashAction(Request $request)
+    public function hashAction(Request $request)
     {
         $hash = new Hash();
 
