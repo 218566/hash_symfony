@@ -27,7 +27,7 @@ class HashController extends AbstractController
     }
 
     /**
-     * @Route("/hash", name="hash_esh")
+     * @Route("/hash", name="hash")
      */
     public function hashAction(Request $request)
     {
@@ -38,7 +38,15 @@ class HashController extends AbstractController
             ->add('save', SubmitType::class, ['label' => 'Przelicz'])
             ->getForm();
 
-        return $this->render('/form/hash-form.html.twig', [
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            /** @var Hash $hash */
+            $hash = $form->getData();
+            $this->entityManager->persist($hash);
+            $this->entityManager->flush();
+        }
+
+        return $this->render('form/hash-form.html.twig', [
             'hash_form' => $form->createView(),
         ]);
 
