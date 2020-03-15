@@ -14,3 +14,4 @@ START PROJECT:
 - sudo nano /etc/hosts
 - add 127.0.0.1 www.xxx.symfony
 - reload apache2
+- composer require (annotations & symfony/apache-pack
