@@ -42,9 +42,13 @@ class HashController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             /** @var Hash $hash */
             $hash = $form->getData();
+            $hash_value = $hash->getHashValue();
+            $hash_value2 = md5($hash_value);
+            $hash->setHashValue($hash_value2);
             $this->entityManager->persist($hash);
             $this->entityManager->flush();
         }
+        dump($form);
 
         return $this->render('form/hash-form.html.twig', [
             'hash_form' => $form->createView(),
