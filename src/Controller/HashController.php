@@ -42,9 +42,9 @@ class HashController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             /** @var Hash $hash */
             $hash = $form->getData();
-            $hash_value = $hash->getHashValue();
-            $hash_value2 = md5($hash_value);
-            $hash->setHashValue($hash_value2);
+            $value = $hash->getValue();
+            $hash_value = md5($value);
+            $hash->setHashValue($hash_value);
             $this->entityManager->persist($hash);
             $this->entityManager->flush();
         }
